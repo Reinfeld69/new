@@ -1,0 +1,26 @@
+```mermaid
+flowchart TD
+    %% Define nodes
+    A[Customer purchases<br>air conditioner]:::mainStep --> B[Installer offers<br>5-year warranty]:::actionStep
+    B --> C[Customer agrees and<br>shares details via app]:::decisionStep
+    C --> D[Company receives details<br>and verifies]:::processStep
+    D --> E[Email sent to customer<br>to confirm warranty]:::actionStep
+    E --> F[Customer clicks link<br>to confirm details on webform]:::processStep
+    F --> G{Does customer opt-in<br>for marketing emails?}:::decisionStep
+    G -- Yes --> H[Customer subscribed<br>to marketing emails]:::successStep
+    G -- No --> H
+    H --> I[Suggest downloading<br>Tadiran IoT app]:::actionStep
+    I --> J[Display thank-you message<br>and confirm warranty]:::successStep
+
+    %% Styles for the nodes
+    classDef mainStep fill:#f9f9f9,stroke:#333,stroke-width:2,font-size:14px;
+    classDef actionStep fill:#d6e9f8,stroke:#0077b6,stroke-width:2,font-size:14px;
+    classDef processStep fill:#fefcbf,stroke:#f59e0b,stroke-width:2,font-size:14px;
+    classDef decisionStep fill:#ffe4e1,stroke:#e63946,stroke-width:2,shape:diamond,font-size:14px;
+    classDef successStep fill:#d4edda,stroke:#38a169,stroke-width:2,font-size:14px;
+
+    %% Add icons (Markdown or placeholders for visual aid)
+    A --> |"Icon: 🛒"| B
+    D --> |"Icon: 📩"| E
+    G --> |"Icon: ✅ or ❌"| H
+    I --> |"Icon: 📱"| J
